@@ -7,9 +7,8 @@
 
 int Decimal_Octal() {
 	
-	double valor, valorInicial;
-	int resto, count = 1;
-	int resp;
+	int valor, valorInicial, resto;
+	int count = 1, resp;
 	tp_pilha pilha;
 	tp_item e;
 			
@@ -17,17 +16,17 @@ int Decimal_Octal() {
 		inicializa_pilha(&pilha);
 		
 			printf("Valor a ser convertido: ");
-			scanf("%lf", &valor);
+			scanf("%d", &valor);
 			valorInicial = valor;
 			printf("\n=============================================\n");
 		
 		while (valor >= 1) {
 		
-			resto = (int) valor % 8;
+			resto = valor % 8;
 			e = resto;
 			valor = valor / 8;
 		
-			printf("Divisão %d: %.2lf\n", count, valor);
+			printf("Divisão %d: %d\n", count, valor);
 			printf("Resto %d: %d\n\n", count, resto);
 			
 			push(&pilha, e);
@@ -35,7 +34,7 @@ int Decimal_Octal() {
 		}
 		
 		printf("==========================================================\n");
-		printf("O valor (%.0lf)10 em Octal eh: ", valorInicial);
+		printf("O valor (%d)10 em Octal eh: ", valorInicial);
 		imprime_pilha_no_space(pilha);
 		
 		while (resp >= 4) {
@@ -61,9 +60,8 @@ int Decimal_Octal() {
 
 int Decimal_Binario() {
 	
-	double valor, valorInicial;
-	int resto, count = 1;
-	int resp;
+	int valor, valorInicial, resto;
+	int count = 1, resp;
 	tp_pilha pilha;
 	tp_item e;
 	
@@ -71,24 +69,24 @@ int Decimal_Binario() {
 		inicializa_pilha(&pilha);
 		
 			printf("Valor a ser dividido: ");
-			scanf("%lf", &valor);
+			scanf("%d", &valor);
 			valorInicial = valor;
 			printf("\n=============================================\n");
 		
 		while (valor >= 1) {
 		
-			resto = (int) valor % 2;
+			resto = valor % 2;
 			e = resto;
 			valor = valor / 2;
 		
-			printf("Divisão %d: %.2lf\n", count, valor);
+			printf("Divisão %d: %d\n", count, valor);
 			printf("Resto %d: %d\n\n", count, resto);
 			
 			push(&pilha, e);
 			count++;
 		}
 		printf("==========================================================\n");
-		printf("O valor (%.0lf)10 em Binário eh: ", valorInicial);
+		printf("O valor (%d)10 em Binário eh: ", valorInicial);
 		imprime_pilha(pilha);
 		
 		while (resp >= 4) {
@@ -112,4 +110,8 @@ int Decimal_Binario() {
 		}
 }
 
+int Octal_Binario() {
+	
+	char valor;
+}
 #endif
