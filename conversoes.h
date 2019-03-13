@@ -76,7 +76,7 @@ int Decimal_Binario() {
 			printf("Valor a ser convertido: ");
 			scanf("%d", &valor);
 			valorInicial = valor;
-			printf("\n=============================================\n");
+			printf("\n=============================================\n\n");
 		
 		while (valor >= 1) {
 		
@@ -90,7 +90,7 @@ int Decimal_Binario() {
 			push(&pilha, e);
 			count++;
 		}
-		printf("=====================================================\n");
+		printf("=====================================================\n\n");
 		printf("O valor (%d)10 em Binário eh: ", valorInicial);
 		imprime_pilha(pilha);
 		
@@ -119,8 +119,8 @@ int Octal_Decimal() {
 	
 	system("cls");
 	
-	int valor, numero[10], resultado = 0;
-	char str[10];
+	int valor, numero[15], resultado = 0;
+	char str[15];
 	int i, count = 1, resp = 4;
 		
 		printf("* Octal -> Decimal *\n\n");
@@ -157,7 +157,7 @@ int Octal_Decimal() {
 			
 			switch (resp) {
 				case 1:
-					return Decimal_Binario();
+					return Octal_Decimal();
 				case 2:
 					system("cls");
 					return main();
@@ -174,8 +174,8 @@ int Octal_Binario() {
 	
 	system("cls");
 	
-	int valor, numero[10], resultado = 0;
-	char str[10];
+	int valor, numero[15], resultado = 0;
+	char str[15];
 	int i, count = 1, resp = 4;
 		
 		printf("* Octal -> Decimal -> Binario *\n\n");
@@ -227,7 +227,7 @@ int Octal_Binario() {
 			count++;
 		}
 		printf("\n=====================================================\n\n");
-		printf("O valor (%d)10 em Binário eh: ", valorInicial);
+		printf("O valor (%d)8 em Binário eh: ", valorInicial);
 		imprime_pilha(pilha);
 				
 		while (resp >= 4) {
@@ -239,6 +239,61 @@ int Octal_Binario() {
 			switch (resp) {
 				case 1:
 					return Decimal_Binario();
+				case 2:
+					system("cls");
+					return main();
+				case 3:
+					exit(0);
+				default:
+					system("cls");
+					printf("\n Opção Inválida");
+				}
+		}
+}
+
+int Binario_Decimal() {
+	
+	system("cls");
+	
+	int valor, numero[15], resultado = 0;
+	char str[15];
+	int i, count = 1, resp = 4;
+		
+		printf("* Binario -> Decimal *\n\n");
+		printf("Valor a ser convertido: ");
+		scanf("%d", &valor);
+		
+		printf("\n=====================================================\n");
+
+		sprintf(str,"%d",valor);
+		
+		for(i=0;i<strlen(str);i++) {
+//		 	printf("%c ",str[i]);
+		 	numero[i] = str[i] - '0';
+		}
+		
+		int a = 0;
+		int size = contaDigitos(valor);
+		for(i=0;i<size;i++) {
+			a++;
+			int parcial = (numero[i] * pow(2,size-a));		
+			resultado += parcial;
+			printf("\nOperação %d: %d\n", count, parcial);
+			count++;
+		}
+		
+		printf("\n=====================================================\n\n");
+		printf("O valor (%d)2 em Decimal eh: %d", valor, resultado);
+		
+		while (resp >= 4) {
+		
+			printf("\n\n=====================================================\n");
+			printf("\nContinuar? \n\n(1) Sim \n(2) Voltar para o Menu \n(3) Sair \n\nOpção: ");
+			scanf("%d", &resp);
+			
+			switch (resp) {
+				case 1:
+					return Binario_Decimal();
 				case 2:
 					system("cls");
 					return main();
