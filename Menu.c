@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <locale.h>
 #include "Conversoes.h"
 
@@ -12,7 +10,7 @@ setlocale(LC_ALL,"portuguese");
 	int resp;
 	//bacon mandou funcinar
 	
-	printf("\n\nEscolha a conversão: \n\n(1) Decimal->Binario \n(2) Decimal->Octal \n(3) Octal->Decimal \n\nOpção: ");
+	printf("\n\nEscolha a conversão: \n\n(1) Decimal->Binário \n(2) Decimal->Octal \n(3) Octal->Decimal \n(4) Octal->Binário \n\nOpção: ");
 	scanf("%d", &resp);
 	
 	switch (resp) {
@@ -25,6 +23,8 @@ setlocale(LC_ALL,"portuguese");
 		case 3:
 			Octal_Decimal();
 		break;
+		case 4:
+			Octal_Binario();
 		default:
 			system("cls");
 			printf("\nOpção inválida.\n");
