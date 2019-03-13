@@ -10,8 +10,9 @@ setlocale(LC_ALL,"portuguese");
 	
 	CarregarLogo();
 	int resp;
+	//bacon mandou funcinar
 	
-	printf("\n\nEscolha a conversão: \n\n(1) Decimal->Binario \n(2) Decimal->Octal \n\nOpção: ");
+	printf("\n\nEscolha a conversão: \n\n(1) Decimal->Binario \n(2) Decimal->Octal \n(3) Octal->Decimal \n\nOpção: ");
 	scanf("%d", &resp);
 	
 	switch (resp) {
@@ -20,6 +21,9 @@ setlocale(LC_ALL,"portuguese");
 		break;
 		case 2:
 			Decimal_Octal();
+		break;
+		case 3:
+			Octal_Decimal();
 		break;
 		default:
 			system("cls");
