@@ -28,7 +28,7 @@ setlocale(LC_ALL,"portuguese");
 		break;
 		case 5:
 			Binario_Decimal();
-		break;
+		break;	
 		default:
 			system("cls");
 			printf("\nOpção inválida.\n");
