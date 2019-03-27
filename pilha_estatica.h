@@ -11,12 +11,12 @@ typedef struct {
 	tp_item item[MAX_PILHA];
 }tp_pilha;
 
-// função que inicializa a pilha (faz o topo apontar para -1, no caso, o primeiro "local" da pilha);
+// funÃ§Ã£o que inicializa a pilha (faz o topo apontar para -1, no caso, o primeiro "local" da pilha);
 void inicializa_pilha(tp_pilha *p){
 	p->topo = -1;
 }
 
-// função que verifica se a pilha esta cheia;
+// funÃ§Ã£o que verifica se a pilha esta cheia;
 int pilha_cheia(tp_pilha *p){
 	if(p->topo == MAX_PILHA-1){
 		return 1;
@@ -25,7 +25,7 @@ int pilha_cheia(tp_pilha *p){
 	}
 }
 
-// função que verifica se a pilha esta vazia;
+// funÃ§Ã£o que verifica se a pilha esta vazia;
 int pilha_vazia(tp_pilha *p){
 	if(p->topo == -1){
 		return 1;
@@ -34,7 +34,7 @@ int pilha_vazia(tp_pilha *p){
 	}
 }
 
-// função que acrescenta um elemento no topo da pilha - PUSH;
+// funÃ§Ã£o que acrescenta um elemento no topo da pilha - PUSH;
 int push(tp_pilha *p, tp_item e){
 	if(pilha_cheia(p) == 1){
 		return 0;
@@ -45,19 +45,19 @@ int push(tp_pilha *p, tp_item e){
 	}
 }
 
-// função que retorna o ultimo elemento da pilha (o que esta no topo) essa função retira o elemento;
-// nessa implementação retorna o status da pilha e, passsa por referencia o elemento;
+// funÃ§Ã£o que retorna o ultimo elemento da pilha (o que esta no topo) essa funÃ§Ã£o retira o elemento;
+// nessa implementaÃ§Ã£o retorna o status da pilha e, passsa por referencia o elemento;
 int pop(tp_pilha *p, tp_item *e){
 	if (pilha_vazia(p)){
 		return 0;				//retorna 0 se a pilha esta vazia; 
 	} else {
-		*e = p->item[p->topo];	//na main, terá uma variavel para ser passada por referencia para receber o valor de e;
+		*e = p->item[p->topo];	//na main, terÃ¡ uma variavel para ser passada por referencia para receber o valor de e;
 		p->topo--;
 		return 1;				//retorna 1 se a pilha possui elementos;
 	}
 }
 
-// função para imprimir a pilha, eh passado por cópia para nao ser necessario esvaziar a pilha inteira para imprimir; 
+// funÃ§Ã£o para imprimir a pilha, eh passado por cÃ³pia para nao ser necessario esvaziar a pilha inteira para imprimir; 
 void imprime_pilha(tp_pilha p){
 	tp_item e;
 	while(!pilha_vazia(&p)){
@@ -74,18 +74,18 @@ void imprime_pilha_no_space(tp_pilha p){
 	}
 }
 
-// função para verificar o tamanho/altura da pilha;
+// funÃ§Ã£o para verificar o tamanho/altura da pilha;
 int altura_pilha(tp_pilha *p){
 	return p->topo;
 }
 
 
-// função que permite vizualizar o elemento que esta no topo, sem decrescer a variável topo; 
+// funÃ§Ã£o que permite vizualizar o elemento que esta no topo, sem decrescer a variÃ¡vel topo; 
 int top(tp_pilha *p, tp_item *e){
 	if (pilha_vazia(p)){
 		return 0;				//retorna 0 se a pilha esta vazia; 
 	} else {
-		*e = p->item[p->topo];	//na main, terá uma variavel para ser passada por referencia para receber o valor de e;
+		*e = p->item[p->topo];	//na main, terÃ¡ uma variavel para ser passada por referencia para receber o valor de e;
 		return 1;				//retorna 1 se a pilha possui elementos;
 	}
 }
