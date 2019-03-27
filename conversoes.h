@@ -43,7 +43,7 @@ int Decimal_Octal() {
 		
 		while (resp >= 4) {
 		
-			printf("\n\n==========================================================\n");
+			printf("\n\n=====================================================\n");
 			printf("\nContinuar? \n\n(1) Sim \n(2) Voltar para o Menu \n(3) Sair \n\nOpção: ");
 			scanf("%d", &resp);
 			
@@ -305,5 +305,28 @@ int Binario_Decimal() {
 				}
 		}
 }
+
+//int Binario_Octal() {
+//	
+//	system("cls");
+//	
+//	int valor, numero[15] = {1};
+//	char str[15];
+//	int i;
+//	
+//		printf("* Binario -> Octal *\n\n");
+//		printf("Valor a ser convertido: ");
+//		scanf("%d", &valor);
+//		
+//		printf("\n==================%d===================================\n", numero[0]);
+//	
+//		sprintf(str,"%d",valor);
+//		
+//		for(i=0;i<strlen(str);i++) {
+//		 	printf("%c ",str[i]);
+//		 	numero[i] = str[i] - '0';
+//		}
+//}
+
 
 #endif
