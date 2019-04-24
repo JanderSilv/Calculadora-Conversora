@@ -119,8 +119,8 @@ int Octal_Decimal() {
 	
 	system("cls");
 	
-	int valor, numero[15], resultado = 0;
-	char str[15];
+	int valor, numero[20], resultado = 0;
+	char str[20];
 	int i, count = 1, resp = 4;
 		
 		printf("* Octal -> Decimal *\n\n");
@@ -174,8 +174,8 @@ int Octal_Binario() {
 	
 	system("cls");
 	
-	int valor, numero[15], resultado = 0;
-	char str[15];
+	int valor, numero[20], resultado = 0;
+	char str[20];
 	int i, count = 1, resp = 4;
 		
 		printf("* Octal -> Decimal -> Binario *\n\n");
@@ -255,17 +255,19 @@ int Binario_Decimal() {
 	
 	system("cls");
 	
-	int valor, numero[15], resultado = 0;
-	char str[15];
+	long long  valor;
+	int numero[20], resultado = 0;
+	char str[20];
 	int i, count = 1, resp = 4;
 		
 		printf("* Binario -> Decimal *\n\n");
 		printf("Valor a ser convertido: ");
-		scanf("%d", &valor);
-		
+		scanf("%lld", &valor);
+		printf("%lld\n",valor);
 		printf("\n=====================================================\n");
 
-		sprintf(str,"%d",valor);
+		sprintf(str,"%lld",valor);
+		// Pega o valor e preenche o vetor de String
 		
 		for(i=0;i<strlen(str);i++) {
 //		 	printf("%c ",str[i]);
@@ -283,7 +285,7 @@ int Binario_Decimal() {
 		}
 		
 		printf("\n=====================================================\n\n");
-		printf("O valor (%d)2 em Decimal eh: %d", valor, resultado);
+		printf("O valor (%lld)2 em Decimal eh: %d", valor, resultado);
 		
 		while (resp >= 4) {
 		
