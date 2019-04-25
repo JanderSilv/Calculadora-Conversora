@@ -10,7 +10,7 @@ setlocale(LC_ALL,"portuguese");
 	int resp;
 	//bacon mandou funcinar
 	
-	printf("\n\nEscolha a conversão: \n\n(1) Decimal->Binário \n(2) Decimal->Octal \n(3) Octal->Decimal \n(4) Octal->Binário \n(5) Binário->Decimal \n\n(6) Sair \n\nOpção: ");
+	printf("\n\nEscolha a conversão: \n\n(1) Decimal->Binário \n(2) Decimal->Octal \n(3) Octal->Decimal \n(4) Octal->Binário \n(5) Binário->Decimal \n(6) Binário->Octal \n\n(7) Sair \n\nOpção: ");
 	scanf("%d", &resp);
 	
 	switch (resp) {
@@ -30,7 +30,11 @@ setlocale(LC_ALL,"portuguese");
 			Binario_Decimal();
 		break;
 		case 6:
+			Binario_Octal();
+		break;	
+		case 7:
 			exit(0);
+		break;	
 		default:
 			system("cls");
 			printf("\nOpção inválida.\n");
